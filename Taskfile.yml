@@ -1,5 +1,7 @@
 version: '3'
 
+dotenv: ['.env']
+
 tasks:
   format:py:
     desc: Format python code
@@ -17,7 +19,9 @@ tasks:
     cmds:
       - poetry install
 
-  new-day:
-    desc:
+  request-input:
+    desc: Request input from AoC
+    cmds:
+      - poetry run python request-input.py {{.CLI_ARGS}}
 
 
