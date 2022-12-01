@@ -1,0 +1,23 @@
+version: '3'
+
+tasks:
+  format:py:
+    desc: Format python code
+    cmds:
+      - find -name '*.py' | poetry run isort --profile black
+      - find -name '*.py' | poetry run black
+
+  format:
+    desc: Format code
+    cmds:
+      - task: format:py
+
+  env-setup:
+    desc: Install env
+    cmds:
+      - poetry install
+
+  new-day:
+    desc:
+
+
