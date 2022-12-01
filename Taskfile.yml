@@ -6,8 +6,8 @@ tasks:
   format:py:
     desc: Format python code
     cmds:
-      - find -name '*.py' | poetry run isort --profile black
-      - find -name '*.py' | poetry run black
+      - find -name '**.py' | xargs poetry run isort --profile black
+      - find -name '**.py' | xargs poetry run black
 
   format:
     desc: Format code

@@ -10,11 +10,12 @@ def gen():
     carried = 0
     for line in lines:
         stripped = line.strip()
-        if stripped == '':
+        if stripped == "":
             yield carried
             carried = 0
         else:
             carried += int(stripped)
+
 
 print(max(gen()))
 print(sum(sorted(gen())[-3:]))
