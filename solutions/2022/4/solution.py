@@ -23,28 +23,29 @@ def cmp(l, r):
 
 def gen():
     for line in lines:
-        left, right = line.split(',')
-        left = tuple(map(int, left.split('-')))
-        right = tuple(map(int, right.split('-')))
+        left, right = line.split(",")
+        left = tuple(map(int, left.split("-")))
+        right = tuple(map(int, right.split("-")))
         res = cmp(left, right) or cmp(right, left)
         yield res
+
 
 print(sum(gen()))
 
 
 def cmp2(l, r):
-    return (r[0] <= l[1])
+    return r[0] <= l[1]
 
 
 def gen2():
     for line in lines:
-        left, right = line.split(',')
-        left = tuple(map(int, left.split('-')))
-        right = tuple(map(int, right.split('-')))
+        left, right = line.split(",")
+        left = tuple(map(int, left.split("-")))
+        right = tuple(map(int, right.split("-")))
         left, right = sorted([left, right])
         res = cmp2(left, right)
-        print(left, right ,res)
+        print(left, right, res)
         yield res
 
-print(sum(gen2()))
 
+print(sum(gen2()))
